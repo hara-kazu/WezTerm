@@ -23,20 +23,9 @@ M.keys = {
   { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
   { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
 
-  -- Shift+Tab でモード切替 (内部的に Alt+M を送信)
-  -- Send both an Alt-modified key and an ESC-prefixed sequence to maximize compatibility with various CLI apps (including Windows variants).
-  { key = 'Tab', mods = 'SHIFT', action = act.Multiple {
-      act.SendKey { key = 'm', mods = 'ALT' },
-      act.SendString '\x1bm',
-    },
-  },
 
-  -- Alt+m を明示的に送信（Altキー直接押下時の補助）
-  { key = 'm', mods = 'ALT', action = act.Multiple {
-      act.SendKey { key = 'm', mods = 'ALT' },
-      act.SendString '\x1bm',
-    },
-  },
+
+
 
   -- Shift+Enter で改行を送信 (Claude Code等での複数行入力用)
   { key = 'Enter', mods = 'SHIFT', action = act.SendString '\n' },
