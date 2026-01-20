@@ -12,6 +12,8 @@ M.keys = {
 
   -- ペイン分割: Ctrl+Alt+T (上下分割)
   { key = 't', mods = 'CTRL|ALT', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+  -- ペイン分割: Ctrl+Alt+H (左右分割)
+  { key = 'h', mods = 'CTRL|ALT', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
 
   -- ペインを閉じる: Ctrl+Shift+W
   { key = 'w', mods = 'CTRL|SHIFT', action = act.CloseCurrentPane { confirm = true } },
